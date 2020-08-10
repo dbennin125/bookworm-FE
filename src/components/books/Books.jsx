@@ -1,14 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Book from './Book';
+import { getBooks } from '../../../selectors/bookSelectors';
 
 
 const Books = () => {
-  const Books = useSelector();
+  const books = useSelector(getBooks);
+
+  const bookElement = books.map(book => (
+    <li key={book.id}>
+      <Book { ...book} />
+    </li>
+  ));
   return (
-    <div>
-            
-    </div>
+    <ul>
+      {bookElement}      
+    </ul>
   );
 };
 

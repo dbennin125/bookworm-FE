@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import reducer, { initialState } from './reducers/bookReducer';
+import  { reducer, initialState } from './reducers/bookReducer';
 
 const store = createStore(
   reducer, 
