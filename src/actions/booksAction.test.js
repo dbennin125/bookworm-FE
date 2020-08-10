@@ -1,4 +1,4 @@
-import { setBooks, SET_BOOKS } from './booksAction'; 
+import { setBooks } from './booksAction'; 
 import { reducer } from '../reducers/bookReducer';
 
 describe('books actions', () => {
