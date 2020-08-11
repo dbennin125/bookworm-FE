@@ -1,4 +1,4 @@
-import { SET_BOOKS } from '../actions/booksAction';
+import { SET_BOOKS, SET_BOOKBYID } from '../actions/booksAction';
 
 export const initialState = {
   loading: false,
@@ -11,6 +11,8 @@ export const reducer = (state, action) =>  {
     case SET_BOOKS: 
       return {  ...state, books: action.payload
       };
+    case SET_BOOKBYID:
+      return { ...state, bookByID: action.payload };
     default: 
       return state;
   }
