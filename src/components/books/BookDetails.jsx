@@ -8,9 +8,9 @@ const BookDetails = ()  => {
   
   return (
     <>
-      <h1>{detailedBook.title}</h1>
-      <h3>{detailedBook.author}</h3>
-      <p>{detailedBook.description} - {detailedBook.pages}</p>
+      <h1>Book Title: {detailedBook.title}</h1>
+      <h3>Author: {detailedBook.author}</h3>
+      <p>Description: {detailedBook.description} Page amount: {detailedBook.pages}</p>
     </>
   );
 };
