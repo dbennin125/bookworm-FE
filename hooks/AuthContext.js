@@ -16,3 +16,8 @@ export const useLogin = () => {
   const { login } = useContext(AuthContext);
   return login;
 };
+
+export const useAuthError = () => {
+  const { authError } = useContext(AuthContext);
+  return authError;
+};
