@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AuthContext } from '../hooks/AuthContext';
-import { fetchSignup, fetchLogin, fetchVerify } from '../services/auth';
+import { fetchSignup, fetchLogin, fetchVerify, fetchLogOut } from '../services/auth';
 
 
 // eslint-disable-next-line react/prop-types
@@ -17,11 +17,15 @@ const AuthProvider = ({ children }) => {
   };
   
   const signup = (email, password, userImage) => {
-    authService(fetchSignup, email, password, userImage);
+    return authService(fetchSignup, email, password, userImage);
   };
 
   const login = (email, password) => {
-    authService(fetchLogin, email, password);
+    return authService(fetchLogin, email, password);
+  };
+
+  const logout = () => {
+    authService(fetchLogOut).then(() => setCurrentUser(null));
   };
 
   useEffect(() => {
@@ -31,7 +35,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ authLoading, currentUser, signup, login, authError }}>
+    <AuthContext.Provider value={{ logout, authLoading, currentUser, signup, login, authError }}>
       {children}
     </AuthContext.Provider>
   );

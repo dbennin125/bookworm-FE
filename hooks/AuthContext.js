@@ -26,3 +26,8 @@ export const useAuthLoading = () => {
   const { authLoading } = useContext(AuthContext);
   return authLoading;
 };
+
+export const useLogOut = () => {
+  const { logout } = useContext(AuthContext);
+  return logout;
+};

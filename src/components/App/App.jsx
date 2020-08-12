@@ -17,7 +17,7 @@ export default function App() {
   return <Router>
     <Header />
     <Switch>
-      <PrivateRoute exact path='/main' component={UserMainPage} />
+      <PrivateRoute path='/main' component={UserMainPage} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/signup' component={SignUp} />
       <Route exact path='/' component={BooksPage} />

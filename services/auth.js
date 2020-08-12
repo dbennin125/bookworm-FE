@@ -10,6 +10,8 @@ export const fetchLogin = (email, password) =>
 
 
 export const fetchVerify = () => get('/api/v1/auth/verify');
+export const fetchLogOut = () => get('/api/v1/auth/logout');
+
 // export const fetchSignup = (email, password, userImage) => {
 //   return fetch(`${process.env.API_URL}/api/v1/auth/signup`, {
 //     method: 'POST',
