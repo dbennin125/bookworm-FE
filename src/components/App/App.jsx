@@ -8,9 +8,11 @@ import {
 import BooksPage from '../books/BooksPage';
 import BookByID from '../books/BookbyID';
 import SignUp from '../auth/SignUp';
+import Header from '../header/Header';
 
 export default function App() {
   return <Router>
+    <Header />
     <Switch>
       <Route exact path='/signup' component={SignUp} />
       <Route exact path='/' component={BooksPage} />

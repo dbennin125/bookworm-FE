@@ -11,3 +11,8 @@ export const useSignUp = () => {
   const { signup } = useContext(AuthContext);
   return signup;
 };
+
+export const useLogin = () => {
+  const { login } = useContext(AuthContext);
+  return login;
+};
