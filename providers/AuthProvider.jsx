@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     return fetchLogin(email, password)
-      .then(user => currentUser(user));
+      .then(user => setCurrentUser(user));
   };
 
   return (
