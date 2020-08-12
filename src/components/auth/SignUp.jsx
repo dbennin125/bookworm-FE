@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useSignUp } from '../../../hooks/AuthContext';
+import { useHistory } from 'react-router-dom';
 
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userImage, setUserImage] = useState('');
+  const history = useHistory();
   
   const signup = useSignUp();
   
@@ -18,8 +20,8 @@ const SignUp = () => {
   const handleSubmit = event => {
     event.preventDefault();
   
-    signup(email, password, userImage);
-   
+    signup(email, password, userImage)
+      .then(() => history.push('/main'));
   };
   
   return (

@@ -21,3 +21,8 @@ export const useAuthError = () => {
   const { authError } = useContext(AuthContext);
   return authError;
 };
+
+export const useAuthLoading = () => {
+  const { authLoading } = useContext(AuthContext);
+  return authLoading;
+};
