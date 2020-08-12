@@ -4,6 +4,11 @@ exports[`App component renders App 1`] = `
 <BrowserRouter>
   <Header />
   <Switch>
+    <PrivateRoute
+      component={[Function]}
+      exact={true}
+      path="/main"
+    />
     <Route
       component={[Function]}
       exact={true}
