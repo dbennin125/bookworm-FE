@@ -25,10 +25,11 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    authService(fetchLogOut).then(() => setCurrentUser(null));
+    return authService(fetchLogOut).then(() => setCurrentUser(null));
   };
 
   useEffect(() => {
+    setCurrentUser(null);
     fetchVerify()
       .then(user => setCurrentUser(user))
       .finally(() => setAuthLoading(false));

@@ -1,9 +1,22 @@
+import { get, del, post, patch } from './request';
+
 export const fetchBooks = () => {
-  return fetch('http://localhost:7890/api/v1/books')
-    .then(res => res.json());
+  return get('/api/v1/books/');
 };
 
 export const fetchByID = id => {
-  return fetch(`http://localhost:7890/api/v1/books/${id}`)
-    .then(res => res.json());
+  return get(`api/v1/books/${id}`);
+};
+
+export const fetchDeleteBook = (id) => {
+  return del(`/api/v1/books/${id}`);
+};
+
+export const createBook = (bookObject) => {
+  return post('/api/v1/books/', bookObject);
+};
+
+export const fetchPatchBook = (id, bookObject) => {
+  return patch(`/api/v1/books/${id}`, bookObject);
+    
 };
