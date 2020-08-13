@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { getByID } from '../../../selectors/bookSelectors';
 
 
-const BookDetails = ()  => {
-  const detailedBook = useSelector(getByID);
+const BookDetails = (detailedBook)  => {
+  // const detailedBook = useSelector(getByID);
   
   return (
     <>

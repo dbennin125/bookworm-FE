@@ -4,8 +4,8 @@ export const fetchBooks = () => {
   return get('/api/v1/books/');
 };
 
-export const fetchByID = id => {
-  return get(`api/v1/books/${id}`);
+export const fetchByID = (id) => {
+  return get(`/api/v1/books/${id}`);
 };
 
 export const fetchDeleteBook = (id) => {

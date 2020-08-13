@@ -11,7 +11,7 @@ const Books = () => {
 
 
   const bookElement = books.map((book, index) => (
-    <Link key ={book._id} to={`/${book._id}`} >
+    <Link key ={book._id} to={`/books/${book._id}`} >
       <li key={index + Date.now()}>
         <Book { ...book} />
       </li>

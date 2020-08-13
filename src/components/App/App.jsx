@@ -17,11 +17,11 @@ export default function App() {
   return <Router>
     <Header />
     <Switch>
-      <PrivateRoute path='/main' component={UserMainPage} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/signup' component={SignUp} />
-      <Route exact path='/' component={BooksPage} />
-      <Route path='/:id' component={BookByID} />
+      <PrivateRoute exact path='/books' component={UserMainPage} />
+      {/* <Route exact path='/' component={BooksPage} /> */}
+      <PrivateRoute exact path='/books/:id' component={BookByID} />
     </Switch>
   </Router>;
 }

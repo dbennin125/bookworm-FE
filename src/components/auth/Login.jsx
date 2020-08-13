@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     login(email, password)
-      .then(() => history.push('/main'));
+      .then(() => history.push('/books'));
   }; 
 
   return (
