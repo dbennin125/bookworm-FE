@@ -1,7 +1,7 @@
 import { get, del, post, patch } from './request';
 
-export const fetchBooks = () => {
-  return get('/api/v1/books/');
+export const fetchBooks = (page = 1) => {
+  return get(`/api/v1/books/?&page=${page}`);
 };
 
 export const fetchByID = (id) => {

@@ -26,16 +26,23 @@ const BookByID = () => {
       });
   }, [newBook]);
 
+ 
   const handleSubmit = event => {
     event.preventDefault();
+    // if(
+    //   !title,
+    //   !pages,
+    //   !description,
+    //   !author
+    // ) 
+    //   return { ...book };
     fetchPatchBook(id, {
       title,
       author, 
       pages,
-      description
+      description,
     })
       .then(book => setNewBook(book));
-
   };
 
   const handleClick = () => {
@@ -54,7 +61,7 @@ const BookByID = () => {
         <input type='text' placeholder='Author' value={author} name='author' onChange={({ target }) => setAuthor(target.value)}/>
         <input type='number' placeholder='Amount of Pages' value={pages} name='pages' onChange={({ target }) => setPages(target.value)}/>
         <input type='text' placeholder='Description' value={description} name='description' onChange={({ target }) => setDescription(target.value)}/>
-        <button>Update a book!</button>
+        <button disabled={!title + !pages + !description + !author}>Update a book!</button>
       </form>
       <button onClick={handleClick}>Delete?</button>
     </>

@@ -18,7 +18,10 @@ const Header = () => {
     <>
       {currentUser
         ? <> 
-          <img src={currentUser.userImage} /><button onClick={logOut}>Logout?</button><button onClick={() => history.push('/books')}>Main Page</button>
+          <img src={currentUser.userImage} />
+          <button onClick={() => history.push('/books/create')}>Add a book</button>
+          <button onClick={logOut}>Logout?</button>
+          <button onClick={() => history.push('/books')}>Main Page</button>
         </>
         : <AuthLinks/>
       }      

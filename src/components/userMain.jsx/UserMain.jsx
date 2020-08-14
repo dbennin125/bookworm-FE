@@ -1,27 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Books from '../books/Books';
-import BookByID from '../books/BookbyID';
-import CreateBook from '../books/CreateBook';
 import { useDispatch } from 'react-redux';
 import { fetchBooks } from '../../../services/bookwormAPI';
 import { setBooks } from '../../actions/booksAction';
 
-
-
-
 const UserMainPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState([]);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
-    fetchBooks()
-      .then(books => dispatch(setBooks(books)));
-  });
-  return (<>
+    fetchBooks(currentPage)
+      .then(({ books, totalPages }) => {
+        (!books); 
+        dispatch(setBooks(books)),
+        setTotalPages(totalPages);
 
-    <CreateBook />
+      });
+  }, [currentPage]);
+  return (<div>
+    <button disabled={currentPage <= 1} onClick={() => setCurrentPage(currentPage - 1)}>&lt;</button>
+    <span>{currentPage} / {totalPages}</span>
+    <button disabled={currentPage >= totalPages} onClick={() => setCurrentPage(currentPage + 1)}>&gt;</button>
     <Books />
-    {/* <BookByID /> */}
-  </>
+  </div>
   );
 };
 

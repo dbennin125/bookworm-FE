@@ -9,7 +9,6 @@ import { getBooks } from '../../../selectors/bookSelectors';
 const Books = () => {
   const books = useSelector(getBooks);
 
-
   const bookElement = books.map((book, index) => (
     <Link key ={book._id} to={`/books/${book._id}`} >
       <li key={index + Date.now()}>
